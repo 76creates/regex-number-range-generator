@@ -206,7 +206,6 @@ def rangeToRegex(rng):
 							apnd_lenght+=1
 						else: break
 					if fi-pos-1-apnd_lenght!=0: # in this case there is NO zero flow with y
-						print(y_str[:0-pos-1-apnd_lenght])
 						cruncher(int(y_str[pos+1+apnd_lenght:]), \
 							fix=y_str[:0-pos-2-apnd_lenght])
 					else: # in this case we append whole y as it has 0 till last char
