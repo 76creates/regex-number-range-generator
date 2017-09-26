@@ -338,23 +338,3 @@ def prepForRegex():
 	print(out)
 		
 if __name__ == "__main__" : reToRange()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
