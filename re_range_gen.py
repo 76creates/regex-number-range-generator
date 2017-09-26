@@ -37,7 +37,7 @@ OUTPUT EXAMPLE
 '''
 
 import re
-from sys import argv
+from sys import argv, exit
 
 def reToRange(arg='system arguments by default'):
 	if arg=='system arguments by default':
@@ -46,7 +46,7 @@ def reToRange(arg='system arguments by default'):
 	# Argument check
 	if len(arg) == 0:
 		print ("Not enough arguments")
-		sys.exit()
+		exit()
 	
 	# regex validator
 	case_range= re.compile("^(\d+)\:(\d+)$")
@@ -58,13 +58,13 @@ def reToRange(arg='system arguments by default'):
 			range_vector.append(i)
 		else:
 			print("Unknown argument: %s" % i)
-			sys.exit()
+			exit()
 	
 	# Range Validator
 	for i in range_vector:
 		nums=re.match('(.*?)\:(.*?)$',i)
 		if int(nums.group(1)) > int(nums.group(2)):
-			sys.exit("First number of range has to be greater than second: %s" % i) 
+			exit("First number of range has to be greater than second: %s" % i) 
 	# call range collapsor
 	colapseRanges()
 	global regex_raw; regex_raw=[]
